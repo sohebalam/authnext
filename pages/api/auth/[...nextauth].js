@@ -11,6 +11,10 @@ export default NextAuth({
       clientSecret: process.env.GOOGLE_SECRET,
     }),
   ],
+  pages: {
+    signIn: "/user/login",
+    signIn: "/user/register",
+  },
   callbacks: {
     jwt: async (token, user) => {
       user && (token.user = user)
